@@ -12,14 +12,14 @@ import json
 import pandas as pd
 from skimage.transform import resize
 
-file_list = glob.glob(r'.\assets\*')
+file_list = glob.glob(r'./assets/*')
 image = plt.imread(file_list[0])
-image = resize(image, (256, 256, 3)) # resize it
+image = resize(image, (256,
+ 256, 3)) # resize it
 # Getting the kernel to be used in Top-Hat
 filterSize = 400
 filterSize =(filterSize, filterSize) 
-kernel = cv2.getStructuringElement(cv2.MORPH_RECT,  
-                                   filterSize) 
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, filterSize) 
   
 # Applying the Top-Hat operation 
 tophat_img = cv2.morphologyEx(image,  
